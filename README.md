@@ -23,7 +23,6 @@ Este projeto tem como objetivo coletar, transformar e analisar dados de criptomo
 │       └── run.py                     # Script principal de execução
 ├── powerbi
 │   └── Crypto-currency.pbix          # Arquivo do dashboard Power BI
-├── radar.ipynb                        # Análise exploratória e visualizações
 └── requirements.txt                   # Dependências do projeto
 ```
 
