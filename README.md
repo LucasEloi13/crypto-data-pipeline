@@ -117,10 +117,10 @@ Melhorias planejadas para o projeto:
    - Não foi utilizada staging area porque:  
      ✅ Os dados da API já vêm relativamente tratados  
      ✅ Volume pequeno de informações (não sobrecarrega o banco)  
-     ✅ Transformações necessárias são mínimas (apenas ajustes de formato)  
+     ✅ Transformações necessárias são mínimas 
 
 3. **Escalabilidade**  
-   - A arquitetura atual é ideal para volumes médios de dados  
+   - A arquitetura atual é ideal para volumes pequenos de dados  
    - Para grandes volumes, recomenda-se:  
      - Implementar staging tables  
      - Adicionar tratamento de erros robusto  
