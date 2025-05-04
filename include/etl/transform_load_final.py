@@ -55,10 +55,10 @@ def transform_and_load_data():
             market_facts.append({
                 "id": row["id"],
                 "price_usd": float(row["price_usd"]),
-                "market_cap_usd": float(row["marketCapUsd"]),
-                "volume_usd_24hr": float(row["volumeUsd24Hr"]),
-                "change_percent_24hr": float(row["changePercent24Hr"]),
-                "vwap_24hr": float(row["vwap24Hr"]) if row["vwap24Hr"] else 0.0,
+                "market_cap_usd": float(row["market_cap_usd"]),
+                "volume_usd_24hr": float(row["volume_usd_24hr"]),
+                "change_percent_24hr": float(row["change_percent_24hr"]),
+                "vwap_24hr": float(row["vwap_24hr"]) if row["vwap_24hr"] else 0.0,
                 "supply": float(row["supply"]),
                 "timestamp": datetime.utcnow()
             })

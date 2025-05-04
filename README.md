@@ -44,7 +44,7 @@ crypto-data-pipeline/
 │       └── load.py
 ├── powerbi/
 │   └── crypto-currency.pbix          # Power Bi com visualizacação dos dados   
-├── .env                    # Variáveis de ambiente do projeto
+├── .env                       # Variáveis de ambiente do projeto
 ├── requirements.txt
 └── README.md
 ```
