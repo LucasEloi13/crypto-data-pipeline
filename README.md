@@ -2,7 +2,7 @@
 
 > ETL modular em Python com Airflow, SQLAlchemy, MySQL, PostgreSQL e Docker Compose.
 
-Este projeto tem como objetivo realizar a extração, transformação e carga de dados de criptomoedas usando a API [CoinCap](https://docs.coincap.io/). O pipeline é dividido em três etapas principais:
+Este projeto tem como objetivo realizar a extração, transformação, carga e vizualicação via PowerBI de dados de criptomoedas usando a API [CoinCap](https://docs.coincap.io/). O pipeline é dividido em três etapas principais:
 
 - **Extract**: coleta os dados da API CoinCap.
 - **Load Staging**: armazena os dados brutos em uma tabela de staging no MySQL.
@@ -22,7 +22,7 @@ Abaixo está o fluxo completo do processo de ETL:
 ## 🧱 Estrutura do Projeto
 
 ```
-coincap_pipeline/
+crypto-data-pipeline/
 ├── dags/
 │   └── dag_etl.py              # DAG principal do Airflow
 ├── .devcontainer/
@@ -31,7 +31,7 @@ coincap_pipeline/
 │   └── Dockerfile   
 ├── include/                        # Módulos compartilhados
 │   ├── config/
-│   │   ├── settings.py             # Configurações gerais
+│   │   ├── config.py             # Configurações gerais
 │   │   └── logging_config.py       # Configuração de logs
 │   │
 │   ├── database/
@@ -94,6 +94,13 @@ A interface do Airflow estará acessível em: [http://localhost:8080](http://loc
 - `crypto_market_data`: tabela de fatos com métricas de mercado
 - `crypto_powerbi_summary`: visão consolidada para uso no Power BI
 
+### 🛠️ Criação das Tabelas
+Para criar todas as tabelas necessárias no ambiente de staging e data warehouse, execute o seguinte comando no terminal:
+
+```
+python include/database/create_tables.py
+```
+
 ---
 
 ## 📌 Requisitos
@@ -102,7 +109,7 @@ A interface do Airflow estará acessível em: [http://localhost:8080](http://loc
 - Docker + Docker Compose
 - [CoinCap API](https://docs.coincap.io/)
 
-Instale os pacotes (caso esteja rodando fora do Docker):
+Instale os pacotes:
 
 ```bash
 pip install -r requirements.txt
@@ -130,4 +137,4 @@ pip install -r requirements.txt
 
 ## ✍️ Autor
 
-Desenvolvido por [Lucas Eloi](https://github.com/LucasEloi13)
+Desenvolvido por [Lucas Eloi]([https://github.com/LucasEloi13](https://www.linkedin.com/in/lucaseloi1/))
