@@ -31,18 +31,20 @@ crypto-data-pipeline/
 │   └── Dockerfile   
 ├── include/                        # Módulos compartilhados
 │   ├── config/
-│   │   ├── config.py             # Configurações gerais
+│   │   ├── config.py                # Configurações gerais
 │   │   └── logging_config.py       # Configuração de logs
 │   │
 │   ├── database/
 │   │   ├── db_connection.py           # Conexões com bancos
-│   │   └── create_tables.py
+│   │   └── create_tables.py           # Arquivo para criação das tabelas
 │   │
 │   └── etl/
 │       ├── extract.py
 │       ├── transform.py
 │       └── load.py
-├── .env                              # Variáveis de ambiente do projeto
+├── powerbi/
+│   └── crypto-currency.pbix          # Power Bi com visualizacação dos dados   
+├── .env                    # Variáveis de ambiente do projeto
 ├── requirements.txt
 └── README.md
 ```
