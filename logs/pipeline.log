@@ -1,0 +1,272 @@
+2025-05-03 16:06:35,890 - INFO - etl - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:06:35,890 - INFO - etl - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:06:35,890 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:06:37,614 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:11:21,326 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:11:21,326 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:11:21,326 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:11:22,976 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:11:22,978 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:11:22,978 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:11:22,978 - INFO - etl - 📥 Carregando dados brutos no banco de staging (MySQL)
+2025-05-03 16:11:23,355 - ERROR - main - ❌ Erro durante a execução do pipeline: 'crypto_raw'
+2025-05-03 16:22:27,517 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:22:27,518 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:22:27,518 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:22:29,415 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:22:29,417 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:22:29,418 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:22:29,418 - INFO - etl - 📥 Carregando dados brutos no banco de staging (MySQL)
+2025-05-03 16:22:29,461 - ERROR - main - ❌ Erro durante a execução do pipeline: The argument passed to Dialect.has_table() should be a <class 'sqlalchemy.engine.base.Connection'>, got <class 'sqlalchemy.engine.base.Engine'>. Additionally, the Dialect.has_table() method is for internal dialect use only; please use ``inspect(some_engine).has_table(<tablename>>)`` for public API use.
+2025-05-03 16:25:16,892 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:25:16,892 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:25:16,892 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:25:18,685 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:25:18,686 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:25:18,686 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:25:18,686 - INFO - etl - 📥 Carregando dados brutos no banco de staging (MySQL)
+2025-05-03 16:25:18,768 - ERROR - main - ❌ Erro durante a execução do pipeline: 'Engine' object has no attribute 'replace'
+2025-05-03 16:28:43,296 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:28:43,296 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:28:43,296 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:28:44,890 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:28:44,891 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:28:44,891 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:28:44,892 - INFO - etl - 📥 Carregando dados brutos no banco de staging (MySQL)
+2025-05-03 16:28:44,992 - INFO - etl - ✅ Dados brutos inseridos no staging
+2025-05-03 16:28:44,996 - INFO - main - ✅ Carga no Staging concluída
+2025-05-03 16:28:44,996 - INFO - main - 🔄 Fase de Transformação + Carga Final (PostgreSQL) iniciada
+2025-05-03 16:28:44,996 - INFO - etl - 🔧 Transformando dados do staging e carregando no destino final (PostgreSQL)
+2025-05-03 16:28:45,184 - ERROR - main - ❌ Erro durante a execução do pipeline: 'Insert' object has no attribute 'on_conflict_do_update'
+2025-05-03 16:31:56,048 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:31:56,049 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:31:56,049 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:31:57,843 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:31:57,845 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:31:57,845 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:31:57,845 - INFO - etl - 📥 Carregando dados brutos no banco de staging (MySQL)
+2025-05-03 16:31:57,915 - ERROR - main - ❌ Erro durante a execução do pipeline: (mysql.connector.errors.IntegrityError) 1062 (23000): Duplicate entry 'bitcoin' for key 'crypto_raw.PRIMARY'
+[SQL: INSERT INTO crypto_raw (id, symbol, name, max_supply, explorer, price_usd, market_cap_usd, volume_usd_24hr, change_percent_24hr, vwap_24hr, supply, timestamp) VALUES (%(id)s, %(symbol)s, %(name)s, %(max_supply)s, %(explorer)s, %(price_usd)s, %(market_cap_usd)s, %(volume_usd_24hr)s, %(change_percent_24hr)s, %(vwap_24hr)s, %(supply)s, %(timestamp)s)]
+[parameters: [{'id': 'bitcoin', 'symbol': 'BTC', 'name': 'Bitcoin', 'max_supply': '21000000.0000000000000000', 'explorer': 'https://blockchain.info/', 'price_usd': '96341.4299152379367217', 'market_cap_usd': '1913299853008.9114471698552775', 'volume_usd_24hr': '6453297311.7848975360295123', 'change_percent_24hr': '-1.3864377357832277', 'vwap_24hr': '96834.6490374203840177', 'supply': '19859575.0000000000000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909413)}, {'id': 'ethereum', 'symbol': 'ETH', 'name': 'Ethereum', 'max_supply': None, 'explorer': 'https://etherscan.io/', 'price_usd': '1834.6025246249601715', 'market_cap_usd': '221496460851.5711654980960795', 'volume_usd_24hr': '3621665289.0315491246959850', 'change_percent_24hr': '-1.1929537367812325', 'vwap_24hr': '1840.7227017638610250', 'supply': '120732669.8173222700000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909417)}, {'id': 'tether', 'symbol': 'USDT', 'name': 'Tether', 'max_supply': None, 'explorer': 'https://www.omniexplorer.info/asset/31', 'price_usd': '1.0012255270621625', 'market_cap_usd': '149366984328.2883741745360084', 'volume_usd_24hr': '16635528153.2418413531326424', 'change_percent_24hr': '-0.0011637479289229', 'vwap_24hr': '1.0007474091530531', 'supply': '149184155108.9565000000000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909418)}, {'id': 'xrp', 'symbol': 'XRP', 'name': 'XRP', 'max_supply': '100000000000.0000000000000000', 'explorer': 'https://xrpcharts.ripple.com/#/graph/', 'price_usd': '2.2096900572414206', 'market_cap_usd': '129274701923.0547217174104806', 'volume_usd_24hr': '632785067.4963174185794076', 'change_percent_24hr': '-0.9633161927473812', 'vwap_24hr': '2.2098329955189235', 'supply': '58503545101.0000000000000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909419)}, {'id': 'binance-coin', 'symbol': 'BNB', 'name': 'BNB', 'max_supply': '144006830.0000000000000000', 'explorer': 'https://etherscan.io/token/0xB8c77482e45F1F44dE1745F52C74426C631bDD52', 'price_usd': '598.9820744326484846', 'market_cap_usd': '86257509765.8697567715498180', 'volume_usd_24hr': '220366774.8941572118591638', 'change_percent_24hr': '-0.3525100696492060', 'vwap_24hr': '599.2522193471462307', 'supply': '144006830.0000000000000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909420)}, {'id': 'solana', 'symbol': 'SOL', 'name': 'Solana', 'max_supply': None, 'explorer': 'https://explorer.solana.com/', 'price_usd': '148.5648704803803666', 'market_cap_usd': '76967661959.1863054050746911', 'volume_usd_24hr': '1224792555.8683007468948096', 'change_percent_24hr': '-1.4592682100645557', 'vwap_24hr': '148.3267083742766330', 'supply': '518074439.2016330400000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909421)}, {'id': 'usd-coin', 'symbol': 'USDC', 'name': 'USDC', 'max_supply': None, 'explorer': 'https://etherscan.io/token/0xa0b86991c6218b36c1d19d4a2e9eb0ce3606eb48', 'price_usd': '0.9999673473216976', 'market_cap_usd': '61512009282.0261238118617560', 'volume_usd_24hr': '2924863592.2752694961123985', 'change_percent_24hr': '-0.0052695107478895', 'vwap_24hr': '1.0002569187819510', 'supply': '61514017879.4630300000000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909421)}, {'id': 'dogecoin', 'symbol': 'DOGE', 'name': 'Dogecoin', 'max_supply': None, 'explorer': 'http://dogechain.info/chain/Dogecoin', 'price_usd': '0.1784805702835353', 'market_cap_usd': '26613363910.7445095237367973', 'volume_usd_24hr': '460458107.3961622434355009', 'change_percent_24hr': '-2.4247019220131700', 'vwap_24hr': '0.1803144633087815', 'supply': '149110706383.7053000000000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909423)}  ... displaying 10 of 100 total bound parameter sets ...  {'id': 'usual-usd', 'symbol': 'USD0', 'name': 'Usual USD', 'max_supply': None, 'explorer': 'https://etherscan.io/address/0x73A15FeD60Bf67631dC6cd7Bc5B6e8da8190aCF5', 'price_usd': '0.9972956608028665', 'market_cap_usd': '647260457.6919323854104382', 'volume_usd_24hr': '2350100.8995868498642195', 'change_percent_24hr': '-0.0173083923830706', 'vwap_24hr': None, 'supply': '649015616.0620006000000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909533)}, {'id': 'pancakeswap', 'symbol': 'CAKE', 'name': 'PancakeSwap', 'max_supply': '450000000.0000000000000000', 'explorer': 'https://bscscan.com/token/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82', 'price_usd': '2.0084407315007347', 'market_cap_usd': '638773328.6593484878878726', 'volume_usd_24hr': '19087430.8322293695140624', 'change_percent_24hr': '-2.1354549143911560', 'vwap_24hr': '2.0357349108243083', 'supply': '318044400.6341418000000000', 'timestamp': datetime.datetime(2025, 5, 3, 16, 31, 57, 909533)}]]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2025-05-03 16:33:21,112 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:33:21,113 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:33:21,113 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:33:22,970 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:33:22,971 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:33:22,971 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:33:22,972 - ERROR - main - ❌ Erro durante a execução do pipeline: 'CryptoETL' object has no attribute 'load_to_staging'
+2025-05-03 16:34:04,618 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:34:04,619 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:34:04,619 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:34:06,196 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:34:06,198 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:34:06,199 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:34:06,231 - ERROR - etl - ❌ Erro no carregamento: name 'inspect' is not defined
+2025-05-03 16:34:06,231 - ERROR - main - ❌ Erro durante a execução do pipeline: name 'inspect' is not defined
+2025-05-03 16:34:52,895 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:34:52,896 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:34:52,896 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:34:54,660 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:34:54,662 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:34:54,662 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:34:54,733 - ERROR - etl - ❌ Erro no carregamento: name 'insert' is not defined
+2025-05-03 16:34:54,733 - ERROR - main - ❌ Erro durante a execução do pipeline: name 'insert' is not defined
+2025-05-03 16:36:11,278 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:36:11,278 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:36:11,278 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:36:13,118 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:36:13,122 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:36:13,123 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:36:13,222 - ERROR - etl - ❌ Erro no carregamento: 'Insert' object has no attribute 'on_duplicate_key_update'
+2025-05-03 16:36:13,223 - ERROR - main - ❌ Erro durante a execução do pipeline: 'Insert' object has no attribute 'on_duplicate_key_update'
+2025-05-03 16:37:18,547 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:37:18,547 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:37:18,547 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:37:20,314 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:37:20,315 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:37:20,315 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:37:20,465 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 16:37:20,518 - INFO - main - ✅ Carga no Staging concluída
+2025-05-03 16:37:20,518 - INFO - main - 🔄 Fase de Transformação + Carga Final (PostgreSQL) iniciada
+2025-05-03 16:37:20,518 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 16:37:20,563 - ERROR - main - ❌ Erro durante a execução do pipeline: tuple indices must be integers or slices, not str
+2025-05-03 16:40:02,446 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:40:02,447 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:40:02,447 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:40:04,146 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:40:04,148 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:40:04,149 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:40:04,378 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 16:40:04,383 - INFO - main - ✅ Carga no Staging concluída
+2025-05-03 16:40:04,383 - INFO - main - 🔄 Fase de Transformação + Carga Final (PostgreSQL) iniciada
+2025-05-03 16:40:04,383 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 16:40:04,484 - ERROR - main - ❌ Erro durante a execução do pipeline: name 'postgresql' is not defined
+2025-05-03 16:41:45,394 - INFO - main - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:41:45,394 - INFO - main - 🔄 Fase de Extração iniciada
+2025-05-03 16:41:45,395 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:41:47,380 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:41:47,382 - INFO - main - ✅ Extração concluída com sucesso
+2025-05-03 16:41:47,383 - INFO - main - 🔄 Fase de Carga no Staging (MySQL) iniciada
+2025-05-03 16:41:47,590 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 16:41:47,594 - INFO - main - ✅ Carga no Staging concluída
+2025-05-03 16:41:47,594 - INFO - main - 🔄 Fase de Transformação + Carga Final (PostgreSQL) iniciada
+2025-05-03 16:41:47,594 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 16:41:47,730 - INFO - etl - ✅ Transformação e carga final concluídas
+2025-05-03 16:41:47,730 - INFO - main - ✅ Pipeline ETL concluído com sucesso!
+2025-05-03 16:43:19,743 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:43:21,246 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:43:21,503 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 16:43:21,506 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 16:43:21,647 - INFO - etl - ✅ Transformação e carga final concluídas
+2025-05-03 16:45:28,992 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:45:30,567 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:45:30,921 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 16:45:30,927 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 16:45:31,054 - INFO - etl - ✅ Transformação e carga final concluídas
+2025-05-03 16:45:53,455 - INFO - etl - 🔁 Iniciando pipeline ETL...
+2025-05-03 16:45:53,455 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 16:45:55,218 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 16:45:55,438 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 16:45:55,444 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 16:45:55,530 - INFO - etl - ✅ Transformação e carga final concluídas
+2025-05-03 20:20:39,661 - INFO - etl - 🔁 Iniciando pipeline ETL...
+2025-05-03 20:20:39,662 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 20:20:41,473 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 20:20:41,768 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 20:20:41,772 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 20:20:41,874 - INFO - etl - ✅ Transformação e carga final concluídas
+2025-05-03 20:21:49,193 - INFO - etl - 🔁 Iniciando pipeline ETL...
+2025-05-03 20:21:49,193 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 20:21:50,931 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 20:21:51,275 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 20:21:51,278 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 20:21:51,396 - INFO - etl - ✅ Transformação e carga final concluídas
+2025-05-03 21:18:32,486 - INFO - etl - 🔁 Iniciando pipeline ETL...
+2025-05-03 21:18:32,487 - INFO - etl - 🔍 Extraindo dados da API CoinCap
+2025-05-03 21:18:34,170 - INFO - etl - ✅ Extração concluída com sucesso
+2025-05-03 21:18:34,431 - INFO - etl - ✅ Dados carregados/atualizados (100 registros)
+2025-05-03 21:18:34,435 - INFO - etl - 🔧 Transformando e carregando dados...
+2025-05-03 21:18:34,592 - INFO - etl - ✅ Transformação e carga final concluídas
+2025-05-03 22:44:37,973 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 22:44:38,288 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 22:44:41,756 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 22:44:42,329 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 22:44:57,224 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-03 22:44:58,225 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-03 22:44:59,586 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-03 22:45:00,449 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-03 22:45:00,507 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-03 22:45:00,525 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-03 22:45:00,529 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-03 22:45:01,556 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-03 22:45:01,582 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-03 22:45:01,589 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-03 22:45:02,338 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 22:45:04,280 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 22:45:06,489 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-03 22:45:08,633 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-03 22:45:09,836 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-03 22:45:09,852 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-03 22:45:09,859 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-03 22:50:02,359 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 22:50:04,181 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 22:50:05,623 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-03 22:50:06,323 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-03 22:50:06,579 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-03 22:50:06,582 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-03 22:50:06,583 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-03 23:41:26,699 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 23:41:28,492 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 23:42:35,827 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 23:42:38,748 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 23:43:17,165 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-03 23:43:19,236 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-03 23:43:20,024 - transform_load_final - ERROR - ❌ Erro na transformação e carga final: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([Errno 2] No such file or directory)")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2025-05-03 23:45:02,736 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 23:45:04,309 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 23:45:05,340 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-03 23:45:06,167 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-03 23:45:06,497 - transform_load_final - ERROR - ❌ Erro na transformação e carga final: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([Errno 2] No such file or directory)")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2025-05-03 23:50:02,689 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 23:50:04,603 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 23:50:05,992 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-03 23:50:07,373 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-03 23:50:07,645 - transform_load_final - ERROR - ❌ Erro na transformação e carga final: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([Errno 2] No such file or directory)")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2025-05-03 23:55:01,696 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-03 23:55:03,842 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-03 23:55:05,055 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-03 23:55:05,789 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-03 23:55:05,984 - transform_load_final - ERROR - ❌ Erro na transformação e carga final: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([Errno 2] No such file or directory)")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2025-05-04 00:00:01,740 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:00:03,700 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:00:05,686 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:00:06,103 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:00:06,315 - transform_load_final - ERROR - ❌ Erro na transformação e carga final: (pymysql.err.OperationalError) (2003, "Can't connect to MySQL server on 'localhost' ([Errno 2] No such file or directory)")
+(Background on this error at: https://sqlalche.me/e/14/e3q8)
+2025-05-04 00:04:38,530 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:04:40,218 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:04:42,041 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:04:42,900 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:04:51,426 - transform_load_final - ERROR - ❌ Erro na transformação e carga final: Compiler <sqlalchemy.dialects.mysql.mysqldb.MySQLCompiler_mysqldb object at 0xffff8f41f510> can't render element of type <class 'sqlalchemy.dialects.postgresql.dml.OnConflictDoUpdate'> (Background on this error at: https://sqlalche.me/e/14/l7de)
+2025-05-04 00:05:02,023 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:05:03,897 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:05:05,460 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:05:06,166 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:05:14,815 - transform_load_final - ERROR - ❌ Erro na transformação e carga final: Compiler <sqlalchemy.dialects.mysql.mysqldb.MySQLCompiler_mysqldb object at 0xffff8f421ad0> can't render element of type <class 'sqlalchemy.dialects.postgresql.dml.OnConflictDoUpdate'> (Background on this error at: https://sqlalche.me/e/14/l7de)
+2025-05-04 00:10:02,141 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:10:03,946 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:10:05,708 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:10:06,373 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:10:15,012 - transform_load_final - ERROR - ❌ Erro na transformação e carga final: Compiler <sqlalchemy.dialects.mysql.mysqldb.MySQLCompiler_mysqldb object at 0xffff8f413ed0> can't render element of type <class 'sqlalchemy.dialects.postgresql.dml.OnConflictDoUpdate'> (Background on this error at: https://sqlalche.me/e/14/l7de)
+2025-05-04 00:11:47,540 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:11:49,399 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:11:51,246 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:11:52,348 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:11:59,933 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-04 00:12:00,134 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-04 00:12:00,134 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-04 00:15:02,075 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:15:03,698 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:15:04,732 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:15:05,552 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:15:12,565 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-04 00:15:12,759 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-04 00:15:12,760 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-04 00:20:02,498 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:20:04,411 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:25:45,276 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:25:45,678 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:25:46,152 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:25:46,923 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:25:47,241 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:25:48,048 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:26:00,717 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:26:05,339 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:26:05,931 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:26:13,708 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-04 00:26:13,955 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-04 00:26:14,731 - transform_load_final - INFO - ✅ Tabela 'crypto_powerbi_summary' atualizada com sucesso
+2025-05-04 00:26:15,258 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-04 00:26:19,239 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:26:29,798 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-04 00:26:30,050 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-04 00:26:30,546 - transform_load_final - INFO - ✅ Tabela 'crypto_powerbi_summary' atualizada com sucesso
+2025-05-04 00:26:31,055 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-04 00:26:44,856 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-04 00:26:45,210 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-04 00:26:45,829 - transform_load_final - INFO - ✅ Tabela 'crypto_powerbi_summary' atualizada com sucesso
+2025-05-04 00:26:46,285 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+2025-05-04 00:30:03,724 - extract - INFO - 🔍 Extraindo dados da API CoinCap
+2025-05-04 00:30:05,864 - extract - INFO - ✅ Extração concluída com sucesso
+2025-05-04 00:30:08,916 - load_staging - INFO - ✅ Dados carregados/atualizados (100 registros) na staging
+2025-05-04 00:30:09,913 - transform_load_final - INFO - 🔧 Transformando e carregando dados para a camada final...
+2025-05-04 00:30:17,826 - transform_load_final - INFO - ✅ Dimensão 'cryptocurrencies' carregada/atualizada (100 registros)
+2025-05-04 00:30:18,102 - transform_load_final - INFO - ✅ Tabela de fatos 'crypto_market_data' carregada (100 registros)
+2025-05-04 00:30:18,579 - transform_load_final - INFO - ✅ Tabela 'crypto_powerbi_summary' atualizada com sucesso
+2025-05-04 00:30:18,969 - transform_load_final - INFO - ✅ Transformação e carga final concluídas com sucesso
+

@@ -1,30 +1,13 @@
-# 📊 Projeto de Pipeline para Análise de Criptomoedas
+# 🪙 CoinCap Pipeline
 
-Este projeto tem como objetivo coletar, transformar e analisar dados de criptomoedas utilizando a API da CoinCap, Google Cloud SQL e Power BI. A arquitetura está baseada em uma pipeline ETL construída em Python.
+> ETL modular em Python com Airflow, SQLAlchemy, MySQL, PostgreSQL e Docker Compose.
 
----
+Este projeto tem como objetivo realizar a extração, transformação e carga de dados de criptomoedas usando a API [CoinCap](https://docs.coincap.io/). O pipeline é dividido em três etapas principais:
 
-## 📁 Estrutura do Projeto
-
-```
-├── EXAMPLE.env                         # Exemplo de configuração de ambiente
-├── README.md                          # Documentação do projeto
-├── images
-│   ├── dashboard-print.png            # Print do dashboard no Power BI
-│   └── fluxo.jpg                      # Fluxograma da pipeline
-├── pipeline
-│   ├── DAGS                           # DAGs para orquestração (ainda não implementado)
-│   ├── logs
-│   │   └── pipeline.log               # Logs da execução
-│   └── src
-│       ├── config.py                  # Configurações e variáveis de ambiente
-│       ├── db.py                      # Conexão e manipulação do banco
-│       ├── etl.py                     # Funções de extração, transformação e carga
-│       └── run.py                     # Script principal de execução
-├── powerbi
-│   └── Crypto-currency.pbix          # Arquivo do dashboard Power BI
-└── requirements.txt                   # Dependências do projeto
-```
+- **Extract**: coleta os dados da API CoinCap.
+- **Load Staging**: armazena os dados brutos em uma tabela de staging no MySQL.
+- **Transform and Load Final**: transforma os dados e carrega em tabelas finais (dimensional e de fatos) no Google Cloud SQL.
+- **Dashboard interativo no Power BI**: dashboard interativo facilitando insights em tempo real sobre o mercado de criptoativos.
 
 ---
 
@@ -32,56 +15,112 @@ Este projeto tem como objetivo coletar, transformar e analisar dados de criptomo
 
 Abaixo está o fluxo completo do processo de ETL:
 
-![Fluxo do projeto](images/fluxo.jpg)
+![Fluxo do projeto](images/pipelinefluxo.jpg)
 
 ---
 
-## 🧠 Resumo do Projeto
+## 🧱 Estrutura do Projeto
 
-O projeto automatiza o processo de coleta de dados de criptomoedas utilizando a **API CoinCap**. Os dados passam por uma etapa de transformação e são armazenados no **Google Cloud SQL**. A partir daí, os dados podem ser analisados por meio de um **dashboard interativo no Power BI**, facilitando insights em tempo real sobre o mercado de criptoativos.
-
----
-
-## 🚀 Como Executar o Projeto
-
-### 1. Clonar o repositório
-```bash
-git https://github.com/LucasEloi13/crypto-data-pipeline
-cd crypto-data-pipeline
+```
+coincap_pipeline/
+├── dags/
+│   └── dag_etl.py              # DAG principal do Airflow
+├── .devcontainer/
+│   └── devcontainer.json
+│   └── docker-compose.yml 
+│   └── Dockerfile   
+├── include/                        # Módulos compartilhados
+│   ├── config/
+│   │   ├── settings.py             # Configurações gerais
+│   │   └── logging_config.py       # Configuração de logs
+│   │
+│   ├── database/
+│   │   ├── db_connection.py           # Conexões com bancos
+│   │   └── create_tables.py
+│   │
+│   └── etl/
+│       ├── extract.py
+│       ├── transform.py
+│       └── load.py
+├── .env                              # Variáveis de ambiente do projeto
+├── requirements.txt
+└── README.md
 ```
 
-### 2. Criar e configurar o arquivo `.env`
-Copie o conteúdo de `EXAMPLE.env` para `.env` e preencha com suas:
+---
 
-Preencha os seguintes campos:
-- API Key e URL da CoinCap
-- Informações do projeto no Google Cloud (ID, região, instância, usuário e senha)
+## 🚀 Como rodar o projeto localmente
 
-### 3. Criar ambiente virtual e instalar dependências
+### 1. Clone o repositório
+
 ```bash
-python -m venv venv
-source venv/bin/activate  # No Windows: venv\Scripts\activate
+git clone https://github.com/LucasEloi13/coincap_pipeline.git
+cd coincap_pipeline
+```
+
+### 2. Configure as variáveis de ambiente
+
+Antes de rodar o projeto, é necessário configurar o arquivo `.env` com as credenciais e parâmetros corretos de API e banco de dados. Um exemplo está disponível no arquivo `example.env`.
+
+### Como usar:
+1. Copie o arquivo de exemplo:
+   ```bash
+   cp example.env .env
+   ```
+2. Edite o novo arquivo EXAMPLE.env com suas configurações reais:
+- Sua chave da API CoinCap
+- Acesso ao banco de dados MySQL (Staging)
+- Acesso ao banco de dados Cloud SQL (Data Warehouse)
+
+### 3. Rode o projeto com Docker Compose
+
+```bash
+docker-compose up --build
+```
+
+A interface do Airflow estará acessível em: [http://localhost:8080](http://localhost:8080)  
+
+---
+
+## 📊 Tabelas criadas
+
+### Staging (MySQL)
+
+- `crypto_raw`: recebe os dados brutos da API CoinCap
+
+### Data Warehouse (PostgreSQL)
+
+- `cryptocurrencies`: tabela dimensional com informações das moedas
+- `crypto_market_data`: tabela de fatos com métricas de mercado
+- `crypto_powerbi_summary`: visão consolidada para uso no Power BI
+
+---
+
+## 📌 Requisitos
+
+- Python 3.10+
+- Docker + Docker Compose
+- [CoinCap API](https://docs.coincap.io/)
+
+Instale os pacotes (caso esteja rodando fora do Docker):
+
+```bash
 pip install -r requirements.txt
 ```
 
-### 4. Executar a pipeline
-```bash
-python pipeline/src/run.py
-```
-
-### 5. Acessar o Power BI
-Abra o arquivo `Crypto-currency.pbix` no Power BI Desktop para visualizar e personalizar o dashboard.
-
 ---
 
-## 🛠 Tecnologias Utilizadas
+## 🧠 Tecnologias Utilizadas
 
-- **Python**
-- **CoinCap API**
-- **Google Cloud SQL**
-- **Power BI**
-- **SQL**
-- **Jupyter Notebook**
+- Python
+- Airflow
+- Docker & Docker Compose
+- SQLAlchemy
+- MySQL
+- Google Cloud Plataform
+- PostgreSQL
+- CoinCap API
+- Power BI (consumindo dados via `crypto_powerbi_summary`)
 
 ---
 
@@ -89,38 +128,6 @@ Abra o arquivo `Crypto-currency.pbix` no Power BI Desktop para visualizar e pers
 
 ![Dashboard](images/dashboard-print.png)
 
----
+## ✍️ Autor
 
-## ➡️ Próximos Passos
-
-Melhorias planejadas para o projeto:
-
-- **Automatização com Airflow**  
-  Criar DAGs para orquestração do pipeline
-
-- **Containerização**  
-  Empacotar a solução em containers Docker
-
-- **Deploy na Nuvem**  
-  Implementar em VM do GCP com execução agendada
-
-
----
-## ⚠️ Observações Importantes
-
-1. **Dashboard no Power BI**  
-   - O arquivo `Crypto-currency.pbix` está disponível na pasta `/powerbi`  
-   - *Não foi possível publicar online* devido à necessidade de licença Premium  
-
-2. **Fluxo de Dados Simplificado**  
-   - Não foi utilizada staging area porque:  
-     ✅ Os dados da API já vêm relativamente tratados  
-     ✅ Volume pequeno de informações (não sobrecarrega o banco)  
-     ✅ Transformações necessárias são mínimas 
-
-3. **Escalabilidade**  
-   - A arquitetura atual é ideal para volumes pequenos de dados  
-   - Para grandes volumes, recomenda-se:  
-     - Implementar staging tables  
-     - Adicionar tratamento de erros robusto  
-     - Considerar processamento em lotes  
+Desenvolvido por [Lucas Eloi](https://github.com/LucasEloi13)
