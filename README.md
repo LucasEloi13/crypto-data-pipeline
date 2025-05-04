@@ -7,7 +7,7 @@ Este projeto tem como objetivo realizar a extração, transformação, carga e v
 - **Extract**: coleta os dados da API CoinCap.
 - **Load Staging**: armazena os dados brutos em uma tabela de staging no MySQL.
 - **Transform and Load Final**: transforma os dados e carrega em tabelas finais (dimensional e de fatos) no Google Cloud SQL.
-- **Dashboard interativo no Power BI**: dashboard interativo facilitando insights em tempo real sobre o mercado de criptoativos.
+- **Dashboard interativo no Power BI**: dashboard interativo facilitando insights em tempo real sobre o mercado de criptoativos. (Também foi feito um Dashboard usando LookerStudio que é uma versão online e grátis para publicação, acesse [aqui](https://lookerstudio.google.com/reporting/c3937528-a5da-40da-865b-84251862ee88/page/d22IF)).
 
 ---
 
@@ -134,6 +134,8 @@ pip install -r requirements.txt
 ---
 
 ## 📷 Visualização do Dashboard
+
+Caso queira acessar um Dashboard feito no lookerStudio (versão free que permite publicação), acesse [aqui](https://lookerstudio.google.com/reporting/c3937528-a5da-40da-865b-84251862ee88/page/d22IF).
 
 ![Dashboard](images/dashboard-print.png)
 
