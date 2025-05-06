@@ -42,6 +42,8 @@ crypto-data-pipeline/
 │       ├── extract.py
 │       ├── transform.py
 │       └── load.py
+│       └── run_etl_manual.py         # Arquivo para rodar manualmente o processo ETL
+│   
 ├── powerbi/
 │   └── crypto-currency.pbix          # Power Bi com visualizacação dos dados   
 ├── .env                       # Variáveis de ambiente do projeto
@@ -81,6 +83,21 @@ docker-compose up --build
 ```
 
 A interface do Airflow estará acessível em: [http://localhost:8080](http://localhost:8080)  
+
+### 4. Teste as conexões
+
+Para testar as conexões com os bancos de dados, execute dentro da pasta raiz do projeto:
+
+```bash
+PYTHONPATH=. python include/test/test_connection.py
+```
+
+### 5. Rodando manualmente
+
+Por fim, para testar a pipeline etl antes de rodar com Airflow, ou para fazer outros testes mauais, use esse executável python manual:
+```bash
+PYTHONPATH=. python include/etl/run_etl_manual.py
+```
 
 ---
 
